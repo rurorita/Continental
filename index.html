@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas Web</title>
+    <!--<link rel="stylesheet" type="text/css" href="continental.css"/>-->
+    <link rel="icon" type="image/png" href="red-mundial.png"/>
+    <!--<script src="continental.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+   
+    <!--Script para la puntuación-->
+    <script type="text/javascript">
+    $(document).ready(function(){   
+        $('#enviar').click(function(){            
+            var nombre_J1=$('#txtJ1').val()
+            var nombre_J2=$('#txtJ2').val()     
+            $('#nombreJ1').append(nombre_J1)
+            $('#nombreJ2').append(nombre_J2)
+           
+        })
+    })
+    </script>
+
+    <!--Estilos del html-->
+    <style>
+        *{
+            margin:10px;
+            box-sizing: border-box;
+            padding:0px;
+        }
+        
+        h1{
+            align-items: center;  
+            background-color: darkslateblue;
+            color:white;
+            display:flex;
+            height:150px;
+            justify-content: center;
+            text-align: center;  
+            padding:1rem;  
+        }
+        
+        #jugadores {
+            align-items:center;  
+            border-color: rgba(123, 8, 199, 0.5);
+            border-style: dashed;
+            display:flex;    
+            justify-content:center;
+            text-align:center;
+            padding:20px;
+        }
+        
+        img{    
+            height: 50px;
+            width:50px;
+        }
+        
+        .form-group{
+            display:flex;
+            justify-content: center; 
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Puntuación Continental</h1>
+    <form role="form">
+        <div class="form-group">
+          <label for="texto">Nombre J1:</label>
+          <input type="text" class="form-control" id="txtJ1">       
+          <label for="texto2">Nombre J2:</label>
+          <input type="text" class="form-control" id="txtJ2">
+          <button type="submit" class="btn btn-info" id="enviar">Enviar</button>
+        </div>        
+      </form>
+    <div id='jugadores'>
+       <img src="red-mundial.png" alt="imagen j1">
+       <label id='nombreJ1'>Nombre Jugador 1</label>           
+       <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr class="table-info">
+            <th scope="col">Jugadas</th>
+            <th scope="col">Inicial J1</th>
+            <th scope="col">Final J1</th>
+            <th scope="col">Inicial J2</th>
+            <th scope="col">Final J1</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo">          
+        </tbody>
+      </table>
+       <label id='nombreJ2'>Nombre Jugador 2</label>    
+       <img src="red-mundial.png" alt="imagen j2"> 
+    </div> 
+    <div id="resultado">
+
+    </div>
+</body>
+</html>
